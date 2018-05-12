@@ -1,0 +1,1 @@
+"""Lesson two on Codility."""
