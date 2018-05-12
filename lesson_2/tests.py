@@ -4,7 +4,9 @@ import pytest
 
 from lesson_2.array_rotation import solution as array_rotation_solution
 
+
 @pytest.mark.parametrize('array_test,rotations,expected_results', (
+    ([], 3, []),
     (['1', '2', '3', '4', '5', '6'], 1, ['6', '1', '2', '3', '4', '5']),
     (['1', '2', '3', '4', '5', '6'], 3, ['4', '5', '6', '1', '2', '3']),
     (['1', '2', '3', '4', '5', '6'], 6, ['1', '2', '3', '4', '5', '6']),

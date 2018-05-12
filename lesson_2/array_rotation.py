@@ -20,6 +20,8 @@
 
 def solution(N, K):
     """Returns rotated array where N is array and K number of rotations."""
+    if not N:
+        return []
     a = K % len(N)
     return N[-a:] + N[:-a]
 
