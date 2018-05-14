@@ -14,10 +14,10 @@
 import random
 
 
-def solution(binary_str):
+def solution(integer_str):
     """Returns maximum binary gap for a given binary string."""
-    binary_gaps = [len(x) for x in binary_str.rstrip('0').rstrip('0').split('1')]
-    return max(binary_gaps) if binary_gaps else 0
+    gaps = [len(x) for x in integer_str.rstrip('0').lstrip('0').split('1')]
+    return max(gaps) if gaps else 0
 
 
 if __name__ == "__main__":
