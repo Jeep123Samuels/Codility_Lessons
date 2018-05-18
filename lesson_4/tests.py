@@ -4,6 +4,7 @@ import pytest
 
 from lesson_4.frog_river_one import solution as frog_river_one_solution
 from lesson_4.missing_integer import solution as missing_integer_solution
+from lesson_4.permutation_check import solution as permutation_check_solution
 
 
 @pytest.mark.parametrize('array_test,X,expected_earliest_time', (
@@ -39,3 +40,22 @@ def test_solution_for_getting_smallest_missing_integer(array_test, expected_smal
     # when ... solution function called
     # then ... returned smallest positive integer is as expected.
     assert missing_integer_solution(array_test) == expected_smallest_integer
+
+
+@pytest.mark.parametrize('array_test,expected_result', (
+    # Given
+    # ... arrays that are not permutation
+    ([1, 3, 4], 0),
+    ([1, 4, 2, 3, 7, 9, 6], 0),
+    ([100000], 0),
+    # ... and those arrays that are.
+    ([1], 1),
+    ([1, 2, 3, 4], 1),
+    ([1, 4, 2, 3], 1),
+    ([8, 1, 4, 2, 3, 7, 9, 6, 5], 1),
+))
+def test_solution_determines_an_array_as_permutation(array_test, expected_result):
+    """Should return whether array is a permutation or not."""
+    # when ... solution function called
+    # then ... returned smallest positive integer is as expected.
+    assert permutation_check_solution(array_test) == expected_result
