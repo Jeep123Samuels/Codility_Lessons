@@ -3,6 +3,7 @@
 import pytest
 
 from lesson_4.frog_river_one import solution as frog_river_one_solution
+from lesson_4.max_counters import solution as max_counters_solution
 from lesson_4.missing_integer import solution as missing_integer_solution
 from lesson_4.permutation_check import solution as permutation_check_solution
 
@@ -59,3 +60,26 @@ def test_solution_determines_an_array_as_permutation(array_test, expected_result
     # when ... solution function called
     # then ... returned smallest positive integer is as expected.
     assert permutation_check_solution(array_test) == expected_result
+
+
+@pytest.mark.parametrize('array_test,n_counter,expected_result', (
+    # Given
+    # ... arrays that are in [1+...+N+1] range.
+    ([1], 3, [1, 0, 0]),
+    ([4], 3, [0, 0, 0]),
+    ([1, 2, 4, 2], 3, [1, 2, 1]),
+    ([1, 2, 2, 4], 3, [2, 2, 2]),
+    ([3, 4, 4, 6, 1, 4, 4], 5, [3, 2, 2, 4, 2]),
+))
+def test_solution_max_counters_solution(array_test, n_counter, expected_result):
+    """Should return max_counters according to the described algorithm.
+
+    Given an array (counter) [0]*n_counter:
+    if 1 <= array_test[n_counter] <= n_counter:
+        then counter[array_test[n_counter]-1] += 1
+    if array_test[n_counter] == n_counter + 1:
+        then counter[ALL] == max(counter[])
+    """
+    # when ... solution function called
+    # then ... returned counter matrix for algorithm.
+    assert max_counters_solution(n_counter, array_test) == expected_result
