@@ -1,4 +1,4 @@
-"""Tests for lesson 4 exercises."""
+"""Tests for lesson 5 exercises."""
 
 import pytest
 
@@ -41,9 +41,7 @@ def test_solution_returns_the_number_of_passing_cars(binary_array, expected_pass
     # then ... returned the number of integers divisible the
     assert passing_cars_solution(binary_array) == expected_passes
 
-#     P[0] = 2    Q[0] = 4
-#     P[1] = 5    Q[1] = 5
-#     P[2] = 0    Q[2] = 6
+
 @pytest.mark.parametrize('gene_array,P,Q,expected_passes', (
     ('AAAAA', [0, 2, 4], [4, 4, 4], [1, 1, 1]),
     ('GGTGAG', [0, 2, 2], [3, 5, 2], [3, 1, 4]),
