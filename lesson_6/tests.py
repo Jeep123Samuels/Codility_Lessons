@@ -1,4 +1,4 @@
-"""Tests for lesson 5 exercises."""
+"""Tests for lesson 6 exercises."""
 
 import pytest
 
