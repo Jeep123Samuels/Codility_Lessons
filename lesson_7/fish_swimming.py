@@ -92,3 +92,4 @@ if __name__ == "__main__":
     print(a)
     a.append('c')
     print(a)
+    print(getattr(a, 'get', None))
